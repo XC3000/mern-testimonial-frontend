@@ -1,9 +1,11 @@
 import axios from "axios";
 
+// console.log(process.env.);
+
 export const BASE_URL =
-  process.env === "production"
-    ? "https://nodejs-testimonial.herokuapp.com/api"
-    : "http://localhost:5000";
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:5000"
+    : "https://nodejs-testimonial.herokuapp.com/api";
 
 export const instance = axios.create({
   baseURL: `${BASE_URL}/api`,
